@@ -105,11 +105,11 @@ const onSubmit = e => {
 
   return (
     <div>
-        <h2>organiza tus citas </h2>
-        { alerta && <Alerta mensaje="Todos los Campos son Obligatorios"/>}
+        <h2>Organiza tus citas </h2>
+        { alerta && <Alerta mensaje="Todos los campos son obligatorios"/>}
         <form onSubmit={ onSubmit }>
             <div className={ styles.cont_input}>
-                <label htmlFor='fecha'>Fecha de Cita</label>
+                <label htmlFor='fecha'>Fecha de cita</label>
                 <input 
                   type='date'
                   value={ fecha }
@@ -120,10 +120,10 @@ const onSubmit = e => {
                 />
             </div>
             <div className={ styles.cont_input}>
-                <label htmlFor='nombre'>Nombre del Paciente</label>
+                <label htmlFor='nombre'>Nombre del paciente</label>
                 <input 
                   type='text'
-                  placeholder='Nombre Completo del Paciente'
+                  placeholder='Nombre completo del paciente'
                   name='nombre'
                   value={ nombre }
                   className={ styles.entrada}
@@ -131,10 +131,10 @@ const onSubmit = e => {
                 />
             </div>
             <div className={ styles.cont_input}>
-                <label htmlFor='telefono'>telefono</label>
+                <label htmlFor='telefono'>Teléfono</label>
                 <input 
                   type='text'
-                  placeholder='Ingrese Numero de Telefono'
+                  placeholder='Ingrese numero de teléfono'
                   name='telefono'
                   value={ telefono }
                   className={ styles.entrada}
@@ -143,7 +143,7 @@ const onSubmit = e => {
             </div>
 
             <div >
-                <label htmlFor='nombre'>Signos Vitales</label>
+                <label htmlFor='nombre'>Signos vitales</label>
                 <div className={ styles.signos}> 
 
                    <input 
@@ -156,7 +156,7 @@ const onSubmit = e => {
                     />
                       <input 
                           type='text'
-                          placeholder='estatura'
+                          placeholder='Estatura'
                           name='estatura'
                           value={ estatura }
                           className={ styles.entrada_signos}
@@ -173,7 +173,7 @@ const onSubmit = e => {
                     />
                     <input 
                           type='text'
-                          placeholder='PresionA Arterial'
+                          placeholder='Presión arterial'
                           name='presion'
                           value={ presion }
                           className={ styles.entrada_signos}
@@ -182,7 +182,7 @@ const onSubmit = e => {
                     
                     <input 
                           type='text'
-                          placeholder='saturacion'
+                          placeholder='Saturación'
                           name='saturacion'
                           value={ saturacion }
                           className={ styles.entrada_signos}
@@ -191,7 +191,7 @@ const onSubmit = e => {
                 </div>
            </div>
            <div className={ styles.cont_input}>
-                <label htmlFor='sintomas'>Sintomas</label>
+                <label htmlFor='sintomas'>Síntomas</label>
                 <textarea 
                          name='sintomas'
                          value={ sintomas }
@@ -202,7 +202,7 @@ const onSubmit = e => {
                 </textarea>
             </div>
             <div className={ styles.cont_input}>
-                <label htmlFor='diagnostico'>Diagnostico</label>
+                <label htmlFor='diagnostico'>Diagnóstico</label>
                 <textarea 
                          name='diagnostico'
                          value={ diagnostico }
@@ -222,7 +222,7 @@ const onSubmit = e => {
                 </textarea>
             </div>
             <div className={ styles.cont_input}>
-                <label htmlFor='fecha'>Fecha de Revicion</label>
+                <label htmlFor='fecha'>Fecha de revisión</label>
                 <input 
                   type='date'
                   placeholder='Ingrese revicion'
