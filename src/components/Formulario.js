@@ -1,0 +1,246 @@
+import { useState, useContext, useEffect } from 'react'
+import styles from './Formulario.module.css'
+import { ValidacionContext } from '../context/ValidacionContexr'
+import Alerta from './Alerta'
+import { v4 as uuidv4 } from 'uuid';
+
+const Formulario = ({ pacientes, setPacientes, editarpaciente, setEditarPaciente }) => {
+   
+const { alerta, setAlerta } = useContext( ValidacionContext )
+
+const [ datos, setDatos ] = useState({
+        fecha: "",
+        nombre: "",
+        telefono: "",
+        temperatura: "",
+        presion: "",
+        peso: "",
+        sintomas: "",
+        diagnostico: "",
+        tratamiento: "",
+        revicion: "",
+        saturacion: ""
+    })
+    useEffect(() => {
+
+        if( Object.keys(editarpaciente).length > 0 ) {
+            setDatos(editarpaciente)
+        }
+
+
+    },[ editarpaciente ])
+
+ const { fecha, nombre, telefono, peso, estatura, temperatura, presion, saturacion, sintomas, diagnostico, tratamiento, revicion  } = datos 
+ const onChange = (e) => {
+        setDatos({
+            ...datos,
+            [e.target.name] : e.target.value
+        })
+    }
+const onSubmit = e => {
+    e.preventDefault()
+
+    if( fecha.trim() === "" || nombre.trim() === "" || telefono.trim() === "" ||  peso.trim() === "" || estatura.trim() === "" || temperatura.trim() === "" || presion.trim() === ""  || saturacion.trim() === "" ||  sintomas.trim() === "" || diagnostico.trim() === "" || tratamiento.trim() === "" || revicion.trim() === "" ) {
+        setAlerta( true )
+        return
+        
+    }
+        setAlerta(false)
+    const objetoPacinte ={
+        peso, 
+        estatura,
+        fecha, 
+        nombre, 
+        telefono, 
+        temperatura,
+        presion, 
+        saturacion,
+        sintomas, 
+        diagnostico, 
+        tratamiento, 
+        revicion
+        
+    }
+
+     if(editarpaciente.id ){
+         objetoPacinte.id = editarpaciente.id
+     const pacienteEditado = pacientes.map( pas => pas.id === editarpaciente.id ? objetoPacinte : pas )
+        setPacientes( pacienteEditado )
+        setEditarPaciente({})
+       
+       
+    } else {
+            objetoPacinte.id = uuidv4()
+             setPacientes([
+         ...pacientes,
+         objetoPacinte
+         ])
+  }
+    
+     
+       
+
+
+     setDatos({
+        fecha: "",
+        nombre: "",
+        peso: "",
+        estatura: "",
+        telefono: "",
+        temperatura: "",
+        presion: "",
+        saturacion: "",
+        sintomas: "",
+        diagnostico: "",
+        tratamiento: "",
+        revicion: "",
+        
+     })
+            
+
+
+}
+
+
+
+  return (
+    <div>
+        <h2>organiza tus citas </h2>
+        { alerta && <Alerta mensaje="Todos los Campos son Obligatorios"/>}
+        <form onSubmit={ onSubmit }>
+            <div className={ styles.cont_input}>
+                <label htmlFor='fecha'>Fecha de Cita</label>
+                <input 
+                  type='date'
+                  value={ fecha }
+                  placeholder='Ingrese la Fecha'
+                  name='fecha'
+                  className={ styles.entrada}
+                  onChange={ onChange }
+                />
+            </div>
+            <div className={ styles.cont_input}>
+                <label htmlFor='nombre'>Nombre del Paciente</label>
+                <input 
+                  type='text'
+                  placeholder='Nombre Completo del Paciente'
+                  name='nombre'
+                  value={ nombre }
+                  className={ styles.entrada}
+                  onChange={ onChange }
+                />
+            </div>
+            <div className={ styles.cont_input}>
+                <label htmlFor='telefono'>telefono</label>
+                <input 
+                  type='text'
+                  placeholder='Ingrese Numero de Telefono'
+                  name='telefono'
+                  value={ telefono }
+                  className={ styles.entrada}
+                  onChange={ onChange }
+                />
+            </div>
+
+            <div >
+                <label htmlFor='nombre'>Signos Vitales</label>
+                <div className={ styles.signos}> 
+
+                   <input 
+                          type='text'
+                          placeholder='Peso'
+                          name='peso'
+                          value={ peso }
+                          className={ styles.entrada_signos}
+                          onChange={ onChange }
+                    />
+                      <input 
+                          type='text'
+                          placeholder='estatura'
+                          name='estatura'
+                          value={ estatura }
+                          className={ styles.entrada_signos}
+                          onChange={ onChange }
+                    />
+                
+                    <input 
+                          type='text'
+                          placeholder='Temperatura'
+                          name='temperatura'
+                          value={ temperatura }
+                          className={ styles.entrada_signos}
+                          onChange={ onChange }
+                    />
+                    <input 
+                          type='text'
+                          placeholder='PresionA Arterial'
+                          name='presion'
+                          value={ presion }
+                          className={ styles.entrada_signos}
+                          onChange={ onChange }
+                    />
+                    
+                    <input 
+                          type='text'
+                          placeholder='saturacion'
+                          name='saturacion'
+                          value={ saturacion }
+                          className={ styles.entrada_signos}
+                          onChange={ onChange }
+                    />
+                </div>
+           </div>
+           <div className={ styles.cont_input}>
+                <label htmlFor='sintomas'>Sintomas</label>
+                <textarea 
+                         name='sintomas'
+                         value={ sintomas }
+                         className={ styles.entrada}
+                         onChange={ onChange }
+                >
+
+                </textarea>
+            </div>
+            <div className={ styles.cont_input}>
+                <label htmlFor='diagnostico'>Diagnostico</label>
+                <textarea 
+                         name='diagnostico'
+                         value={ diagnostico }
+                         className={ styles.entrada}
+                         onChange={ onChange }
+                >
+                </textarea>
+            </div>
+            <div className={ styles.cont_input}>
+                <label htmlFor='tratamiento'>Tratamiento</label>
+                <textarea 
+                         name='tratamiento'
+                         value={ tratamiento }
+                         className={ styles.entrada}
+                         onChange={ onChange }
+                >
+                </textarea>
+            </div>
+            <div className={ styles.cont_input}>
+                <label htmlFor='fecha'>Fecha de Revicion</label>
+                <input 
+                  type='date'
+                  placeholder='Ingrese revicion'
+                  name='revicion'
+                  value={ revicion }
+                  className={ styles.entrada}
+                  onChange={ onChange }
+                />
+            </div>
+            <div className={ styles.cont_input}>
+              <button 
+                     type='submit'
+                     className={ styles.enviar }
+                    >{editarpaciente.id ? "Editar Paciente" : "Enviar"}</button>
+            </div>
+        </form>
+    </div>
+  )
+}
+
+export default Formulario

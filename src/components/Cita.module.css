@@ -1,0 +1,112 @@
+.cont_cita {
+    background-color: var(--blanco);
+    padding: 1rem;
+    border-radius: .4rem;
+    font-size: 1rem;
+    margin-top: 3.5rem;
+    margin-bottom: 1rem;
+    max-width: 40rem;
+}
+.datos {
+     padding: .5rem;
+}
+.datos p {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 5px;
+}
+.datos span {
+    font-size: 12px;
+    
+}
+.signos {
+    padding: .5rem;
+}
+.signos p {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 5px;
+}
+.signos span {
+    font-size: 12px;
+}
+.sintomas {
+    padding: 5px;
+    border-radius: 10px;
+}
+.sintomas p {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 5px;
+    
+}
+.sintomas span {
+    font-size: 12px;
+       
+}
+.diagnostico {
+    padding: 5px;
+    border-radius: 10px;
+   }
+.diagnostico p {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 5px;
+}
+.diagnostico span {
+    font-size: 12px;
+}
+.tratamiento {
+    padding: 5px;
+    border-radius: 10px;
+}
+.tratamiento p {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 5px;
+}
+.tratamiento span {
+    font-size: 12px;
+}
+.revicion {
+    padding: 5px;
+    border-radius: 10px;
+  }
+.revicion p {
+     font-size: 15px;
+    font-weight: 700;
+    margin: 5px;
+}
+.revicion span {
+    font-size: 12px;
+}
+.cont_btn {
+    display: flex;
+    justify-content: space-between;
+}
+.cont_btn button {
+    width: 10rem;
+    text-align: center;
+    border-radius: 3px;
+    padding: 5px;
+    color: var(--blanco);
+}
+
+.editar {
+    background-color: rgb(61, 59, 177);
+    transition-property: background-color;
+    transition-duration: .3seg;
+}
+.editar:hover{
+    cursor: pointer;
+    background-color: rgb(43, 42, 100);
+}
+.eliminar {
+    background-color: rgb(209, 66, 66);
+    transition-property: background-color;
+    transition-duration: .3seg;
+}
+.eliminar:hover{
+    cursor: pointer;
+    background-color: rgb(117, 49, 49);
+}

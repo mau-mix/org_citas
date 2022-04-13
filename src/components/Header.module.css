@@ -1,0 +1,6 @@
+.titulo {
+    text-align: center;
+    color: var(--blanco);
+    padding: 2rem;
+    text-transform: uppercase;
+}

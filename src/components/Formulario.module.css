@@ -1,0 +1,40 @@
+.cont_input {
+    display: flex;
+    flex-direction: column;
+}
+.cont_input textarea {
+    height: 4rem;
+    
+}
+.entrada {
+    padding: .5rem;
+    border-radius: .4rem;
+    font-size: 1rem;
+    margin-top: .2rem;
+    margin-bottom: 1rem;
+}
+.signos {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.entrada_signos {
+    padding: .5rem;
+    border-radius: .4rem;
+    font-size: 1rem;
+    margin: .2rem;
+}
+.enviar {
+    background-color: #6e495c;
+    color: var(--blanco);
+    padding: 1rem;
+    border-radius: .4rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: .2rem;
+    transition-property: background-color;
+    transition-duration: .3seg;
+}
+.enviar:hover{
+    cursor: pointer;
+    background-color: #4d2f3e;
+}
