@@ -236,7 +236,7 @@ const onSubmit = e => {
               <button 
                      type='submit'
                      className={ styles.enviar }
-                    >{editarpaciente.id ? "Editar Paciente" : "Enviar"}</button>
+                    >{editarpaciente.id ? "Editar paciente" : "Enviar"}</button>
             </div>
         </form>
     </div>

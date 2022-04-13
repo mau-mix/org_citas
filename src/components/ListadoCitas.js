@@ -8,7 +8,7 @@ const ListadoCitas = ({ pacientes, setEditarPaciente, eliminarPaciente }) => {
     <div>
       { pacientes.length > 0  ? (
       <>
-         <h2>Administra tuc Citas</h2>
+         <h2>Administra tus citas</h2>
          { pacientes.map( paciente => (
             <Cita 
                 key={paciente.id}
